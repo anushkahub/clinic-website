@@ -84,3 +84,46 @@ window.addEventListener('scroll', () => {
         header.style.backdropFilter = 'none';  
     }  
 });  
+function toggleChat() {
+  const chat = document.getElementById("dentist-chatbot");
+  if (chat.style.display === "block") {
+    chat.style.display = "none";
+  } else {
+    chat.style.display = "block";
+  }
+}
+
+function sendMessage() {
+  const input = document.getElementById("userMsg");
+  const chatBody = document.getElementById("chat-body");
+
+  if (input.value.trim() === "") return;
+
+  chatBody.innerHTML += `<p class="user">You: ${input.value}</p>`;
+
+  let msg = input.value.toLowerCase();
+  let reply = "Please visit the clinic for a proper dental check-up.";
+
+  if (msg.includes("pain"))
+    reply = "Tooth pain may be due to cavities or infection. Please book an appointment soon.";
+
+  else if (msg.includes("appointment"))
+    reply = "You can call +91 99237 24040 or use the appointment form on the website.";
+
+  else if (msg.includes("timing"))
+    reply = "Clinic timing: Mon–Sat (except Tuesday), 4:00 PM – 8:00 PM.";
+
+  else if (msg.includes("cleaning"))
+    reply = "Teeth cleaning is recommended every 6 months for healthy gums.";
+
+  else if (msg.includes("braces"))
+    reply = "We provide braces and aligners. Orthodontic consultation is advised.";
+
+  else if (msg.includes("hello") || msg.includes("hi"))
+    reply = "Hello 😊 How can I help you with your dental concern today?";
+
+  chatBody.innerHTML += `<p class="bot">🦷 Dentist: ${reply}</p>`;
+  chatBody.scrollTop = chatBody.scrollHeight;
+  input.value = "";
+}
+

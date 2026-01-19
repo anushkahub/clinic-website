@@ -335,7 +335,25 @@
             </div>  
         </div>  
     </footer>  
-  
-    <script src="script.js"></script>  
+   
+    <!-- Dentist Chatbot -->
+<div id="dentist-chatbot">
+  <div class="chat-header">
+    🦷 Dr. Walvekar (Dentist)
+    <span onclick="toggleChat()">✖</span>
+  </div>
+
+  <div id="chat-body"></div>
+
+  <div class="chat-input">
+    <input type="text" id="userMsg" placeholder="Ask your dentist..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<button id="chat-toggle" onclick="toggleChat()">💬</button>
+
+    <script src="script.js"></script> 
+    
 </body>  
 </html>  
