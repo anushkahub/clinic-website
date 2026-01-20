@@ -111,7 +111,7 @@ function sendMessage() {
     reply = "You can call +91 99237 24040 or use the appointment form on the website.";
 
   else if (msg.includes("timing"))
-    reply = "Clinic timing: Mon–Sat (except Tuesday), 4:00 PM – 8:00 PM.";
+    reply = "Clinic timing: Mon–Sat (except Tuesday), 4:00 PM – 8:00 PM in ashta and 10:00 AM - 3:00 PM in bhilawadi.";
 
   else if (msg.includes("cleaning"))
     reply = "Teeth cleaning is recommended every 6 months for healthy gums.";
